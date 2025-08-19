@@ -1,15 +1,16 @@
 # ising_with_allegro
 A real time Ising model with MonteCarlo method in C!
 
-Introducción
+#Introducción
+
 El algoritmo Metropolis-Hasting es un método de Monte Carlo para muestrear distribuciones de probabilidad en donde el problema sea obtener una muestra aleatoria desde una distribución conocida. Es una forma no determinista de aproximar una ecuación costosa computacionalmente hablando.
 El modelo de Ising consiste en una red bidimensional en donde cada unidad de la red representa un spin. La idea de este modelo es que se pueda generar una secuencia de estados de esta red de tal manera que se distribuyan según la distribución de Boltzmann.
   
-Implementación Secuencial
+#Implementación 
 En el archivo adjunto llamado ising1.c se implementó un código secuencial el cual genera fotogramas como vistas de la matriz 2D que contiene los spines como elementos, con valores de -1 o 1.
 Primero se inicializan las variables relacionadas con la pantalla (librería Allegro), segundo se inicializa aleatoriamente la matriz de spines. Luego, al ingresar al bucle que genera las vistas de la matriz se inicia el algoritmo: se selecciona aleatoriamente un spin, se calcula la energía que rodea a este spin y se decide el cambio de estado. Si la energía circundante es menor que 0 o si un numero aleatorio entre 0 y 1 es menor a la distribución de Boltzmann evaluado en la temperatura del sistema se cambia el estado, en caso contrario se mantiene.
 
-Algunas definiciones:
+#Algunas definiciones:
 
 • L: Este valor representa el tamaño de la matriz o cuadrícula de tal manera que sus dimensiones sean de LxL. Para esta ocasión se estableció L = 128.
 
