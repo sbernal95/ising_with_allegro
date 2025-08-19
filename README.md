@@ -10,14 +10,20 @@ En el archivo adjunto llamado ising1.c se implementó un código secuencial el c
 Primero se inicializan las variables relacionadas con la pantalla (librería Allegro), segundo se inicializa aleatoriamente la matriz de spines. Luego, al ingresar al bucle que genera las vistas de la matriz se inicia el algoritmo: se selecciona aleatoriamente un spin, se calcula la energía que rodea a este spin y se decide el cambio de estado. Si la energía circundante es menor que 0 o si un numero aleatorio entre 0 y 1 es menor a la distribución de Boltzmann evaluado en la temperatura del sistema se cambia el estado, en caso contrario se mantiene.
 
 Algunas definiciones:
+
 • L: Este valor representa el tamaño de la matriz o cuadrícula de tal manera que sus dimensiones sean de LxL. Para esta ocasión se estableció L = 128.
+
 • STEPS: Número de pasos de Monte Carlo para el algoritmo Metropolis-Hasting. Este valor regula la cantidad de consultas aleatorias que se realizan por cada fotograma.
+
 • SCALE: Este factor es para escalar la vista de la matriz a un valor pixelfriendly. Cada
 valor en la matriz equivale a SCALExSCALE pixeles en la pantalla.
+
 • temp: Esta variable se inicializa al principio de la función main y toma el valor del
 primer argumento pasado por consola. Representa al valor de la temperatura y su valor
 default es 1.
+
 • mag: Esta variable contiene el valor de la magnetización total de la matriz. S
+
 • t1, t2, t_total, dt: Estas variables permiten calcular el tiempo de de ejecución de cada
 vez que se aplica el algoritmo. t1 y t2 guardan el valor inicial del ciclo y el final respectivamente. t_total acumula la diferencia t2-t1. dt es el resultado de t_total dividido en la cantidad de ciclos que han ocurrido. dt puede interpretarse como el tiempo medio actual que toma cada ciclo en completarse.
 
